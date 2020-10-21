@@ -1,3 +1,8 @@
+/**
+ *
+ * Helper functions
+ */
+
 const F = () => false
 
 const I = (a) => a
@@ -50,11 +55,6 @@ const join = (delimiter, ctx) =>
 const filter = (fn, ctx) =>
   typeof fn === 'function' && Array.isArray(ctx) ? ctx.filter(fn) : undefined
 
-const propEq = (value, prop, ctx) =>
-  typeof value === 'string' && typeof prop === 'string' && Array.isArray(ctx)
-    ? eq(value, ctx[prop])
-    : undefined
-
 const nth = (pos, ctx) =>
   typeof pos === 'number' && Array.isArray(ctx) ? ctx[pos] : undefined
 
@@ -63,7 +63,6 @@ module.exports = {
   ifElse,
   nth,
   eq,
-  propEq,
   F,
   unless,
   K,
